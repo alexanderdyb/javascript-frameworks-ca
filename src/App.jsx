@@ -1,14 +1,19 @@
 import "./App.css";
-import Button from "./components/Button";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header>
-        <Button />
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="checkout" element={<Checkout />} />
+          {/* <Route path="*" element={<RouteNotFound />} /> */}
+        </Route>
+      </Routes>
     </div>
   );
 }
-
-export default App;
