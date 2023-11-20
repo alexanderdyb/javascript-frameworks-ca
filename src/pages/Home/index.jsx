@@ -1,3 +1,10 @@
+import BackgroundImage from "../../components/BackgroundImage";
+
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <BackgroundImage />
+      <h1>Home</h1>
+    </>
+  );
 }
