@@ -1,10 +1,13 @@
 import BackgroundImage from "../../components/BackgroundImage";
+import Section from "../../components/Section";
 
 export default function Home() {
   return (
     <>
       <BackgroundImage />
-      <h1>Home</h1>
+      <Section>
+        <p>Home</p>
+      </Section>
     </>
   );
 }

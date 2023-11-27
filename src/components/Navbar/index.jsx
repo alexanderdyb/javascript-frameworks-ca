@@ -10,10 +10,12 @@ export default function Navbar() {
     <>
       <nav className={styles.nav}>
         <div className={styles.linkWrapper}>
-          <Link to="/">Store</Link>
+          <Link to="/">
+            Innovate<span className={styles.logo}>Edge</span>
+          </Link>
           <ul>
             <li>
-              <Link to="/checkout" className={styles.basket}>
+              <Link to="/cart" className={styles.basket}>
                 <ShoppingBasketIcon className={styles.basketIcon} />
                 {basketCount > 0 && (
                   <div className={styles.basketCountBackground}>

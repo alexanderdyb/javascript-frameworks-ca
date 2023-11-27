@@ -32,3 +32,9 @@
   left: -8px;
   top: -10px;
 }
+
+.logo {
+  color: azure;
+  font-weight: bold;
+  word-spacing: 5px;
+}
