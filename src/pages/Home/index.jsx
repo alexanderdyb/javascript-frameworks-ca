@@ -1,5 +1,7 @@
 import BackgroundImage from "../../components/BackgroundImage";
 import Section from "../../components/Section";
+import Product from "../../components/Product";
+import styles from "./Home.module.css";
 import { useEffect, useState } from "react";
 
 const url = "https://api.noroff.dev/api/v1/online-shop;";
@@ -41,12 +43,13 @@ export default function Home() {
     <>
       <BackgroundImage />
       <Section>
-        <div>
+        <div className={styles.productContainer}>
           {products.map((product) => (
-            <div>
-              <img src={product.imageUrl} />
-              <h2>{product.title}</h2>
-            </div>
+            <Product
+              image={product.imageUrl}
+              title={product.title}
+              price={product.price}
+            />
           ))}
         </div>
       </Section>
