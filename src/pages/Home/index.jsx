@@ -4,7 +4,7 @@ import Product from "../../components/Product";
 import styles from "./Home.module.css";
 import { useEffect, useState } from "react";
 
-const url = "https://api.noroff.dev/api/v1/online-shop;";
+const url = "https://api.noroff.dev/api/v1/online-shop";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -49,6 +49,8 @@ export default function Home() {
               image={product.imageUrl}
               title={product.title}
               price={product.price}
+              discountedPrice={product.discountedPrice}
+              key={product.id}
             />
           ))}
         </div>
