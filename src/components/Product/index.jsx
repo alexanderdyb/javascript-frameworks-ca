@@ -1,25 +1,10 @@
 import styles from "./Product.module.css";
+import Discount from "../Discount";
+import CalculateDiscount from "../CalculateDiscount";
 
 export default function Product({ image, title, price, discountedPrice }) {
-  const discount = (price, discountedPrice) => {
-    if (price > discountedPrice) {
-      return true;
-    }
-  };
-
-  const calculateDiscount = (price, discountedPrice) => {
-    if (price > discountedPrice) {
-      const discount = price - discountedPrice;
-      const discountPercentage = (discount / price) * 100;
-      return Math.round(discountPercentage);
-    }
-    return 0;
-  };
-
-  const isDiscounted = discount(price, discountedPrice);
-  const isCalculateDiscount = calculateDiscount(price, discountedPrice);
-  console.log(isDiscounted);
-  console.log(isCalculateDiscount);
+  const isDiscounted = Discount(price, discountedPrice);
+  const isCalculateDiscount = CalculateDiscount(price, discountedPrice);
 
   return (
     <div>
