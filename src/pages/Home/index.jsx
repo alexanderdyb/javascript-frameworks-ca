@@ -1,8 +1,11 @@
 import BackgroundImage from "../../components/BackgroundImage";
 import Section from "../../components/Section";
+import Product from "../../components/Product";
+import styles from "./Home.module.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const url = "https://api.noroff.dev/api/v1/online-shop;";
+const url = "https://api.noroff.dev/api/v1/online-shop";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -26,7 +29,6 @@ export default function Home() {
       }
     }
     getProducts();
-    console.log(products);
   }, []);
 
   if (isLoading) {
@@ -41,12 +43,17 @@ export default function Home() {
     <>
       <BackgroundImage />
       <Section>
-        <div>
+        <div className={styles.productContainer}>
           {products.map((product) => (
-            <div>
-              <img src={product.imageUrl} />
-              <h2>{product.title}</h2>
-            </div>
+            <Link to={`/product/${product.id}`}>
+              <Product
+                image={product.imageUrl}
+                title={product.title}
+                price={product.price}
+                discountedPrice={product.discountedPrice}
+                key={product.id}
+              />
+            </Link>
           ))}
         </div>
       </Section>
