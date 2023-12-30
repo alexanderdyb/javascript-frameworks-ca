@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Section from "../../components/Section";
 import styles from "./ProductDetails.module.css";
+import Button from "../../components/Button";
+import Price from "../../components/Price";
+import PriceTag from "../../components/PriceTag";
 
 export default function ProductDetails() {
   const [data, setData] = useState(null);
@@ -40,15 +43,30 @@ export default function ProductDetails() {
   console.log(data);
 
   return (
-    <Section>
-      <div>
-        <div>
-          <img src={data.imageUrl} alt={data.title} />
+    <>
+      <Section>
+        <div className={styles.productDetails}>
+          <div className={styles.productDetailsImage}>
+            <img src={data.imageUrl} alt={data.title} />
+            <PriceTag
+              price={data.price}
+              discountedPrice={data.discountedPrice}
+            />
+          </div>
+          <div>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <Price price={data.price} discountedPrice={data.discountedPrice} />
+            <Button title={"Add to Cart"} />
+          </div>
         </div>
-        <div>
-          <h1>{data.title}</h1>
+      </Section>
+      <Section>
+        <div className={styles.reviews}>
+          <h2>Reviews</h2>
+          {}
         </div>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 }

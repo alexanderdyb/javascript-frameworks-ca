@@ -1,0 +1,13 @@
+.productPrice {
+  font-weight: bold;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+}
+
+.discountedPrice {
+  padding-left: 10px;
+  text-decoration: line-through;
+}
