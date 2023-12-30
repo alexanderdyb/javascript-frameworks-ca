@@ -5,6 +5,7 @@ import styles from "./ProductDetails.module.css";
 import Button from "../../components/Button";
 import Price from "../../components/Price";
 import PriceTag from "../../components/PriceTag";
+import Reviews from "../../components/Reviews";
 
 export default function ProductDetails() {
   const [data, setData] = useState(null);
@@ -64,7 +65,7 @@ export default function ProductDetails() {
       <Section>
         <div className={styles.reviews}>
           <h2>Reviews</h2>
-          {}
+          <Reviews reviews={data.reviews} />
         </div>
       </Section>
     </>

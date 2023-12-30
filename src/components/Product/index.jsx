@@ -7,7 +7,7 @@ export default function Product({ image, title, price, discountedPrice, id }) {
   return (
     <div>
       <div className={styles.productImage}>
-        <img src={image} />
+        <img src={image} alt={title} />
         <PriceTag price={price} discountedPrice={discountedPrice} />
       </div>
       <p className={styles.productTitle}>{title}</p>
