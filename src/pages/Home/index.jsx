@@ -2,6 +2,7 @@ import BackgroundImage from "../../components/BackgroundImage";
 import Section from "../../components/Section";
 import Product from "../../components/Product";
 import styles from "./Home.module.css";
+import Loading from "../../components/Loading";
 import { useEffect, useState } from "react";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -10,6 +11,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     async function getProducts() {
@@ -18,6 +20,9 @@ export default function Home() {
         setIsLoading(true);
 
         const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
         const json = await response.json();
         setProducts(json);
 
@@ -25,36 +30,39 @@ export default function Home() {
       } catch (error) {
         setIsLoading(false);
         setIsError(true);
+        setErrorMessage(error.message);
       }
     }
     getProducts();
   }, []);
 
-  if (isLoading) {
-    return <div>Loading products</div>;
-  }
-
-  if (isError) {
-    return <div>Error loading data</div>;
-  }
-
   return (
     <>
       <BackgroundImage />
-      <Section>
-        <div className={styles.productContainer}>
-          {products.map((product) => (
-            <Product
-              image={product.imageUrl}
-              title={product.title}
-              price={product.price}
-              discountedPrice={product.discountedPrice}
-              key={product.id}
-              id={product.id}
-            />
-          ))}
+      {isLoading ? (
+        <div className={styles.wrapper}>
+          <Loading />
         </div>
-      </Section>
+      ) : isError ? (
+        <div className={styles.wrapper}>
+          {errorMessage} Error fetching data. Please try again later.
+        </div>
+      ) : (
+        <Section>
+          <div className={styles.productContainer}>
+            {products.map((product) => (
+              <Product
+                image={product.imageUrl}
+                title={product.title}
+                price={product.price}
+                discountedPrice={product.discountedPrice}
+                key={product.id}
+                id={product.id}
+              />
+            ))}
+          </div>
+        </Section>
+      )}
     </>
   );
 }
