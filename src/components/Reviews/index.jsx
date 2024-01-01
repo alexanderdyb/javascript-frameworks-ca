@@ -5,7 +5,7 @@ export default function Reviews({ reviews }) {
     <>
       {reviews && reviews.length > 0 ? (
         reviews.map((review) => (
-          <div className={styles.userReviews}>
+          <div key={review.id} className={styles.userReviews}>
             <p>Rating: {review.rating}</p>
             <p>{review.description}</p>
             <p>by {review.username}</p>

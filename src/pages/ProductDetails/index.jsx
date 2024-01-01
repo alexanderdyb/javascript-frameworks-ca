@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext, useReducer } from "react";
+import { ThemeContext } from "../../Layout";
 import Section from "../../components/Section";
 import styles from "./ProductDetails.module.css";
 import Button from "../../components/Button";
@@ -12,6 +13,10 @@ export default function ProductDetails() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   let { id } = useParams();
+  const { state, dispatch } = useContext(ThemeContext);
+  useEffect(() => {
+    console.log("Cart updated:", state);
+  }, [state.cart]);
 
   useEffect(() => {
     async function getData(url) {
@@ -58,7 +63,12 @@ export default function ProductDetails() {
             <h1>{data.title}</h1>
             <p>{data.description}</p>
             <Price price={data.price} discountedPrice={data.discountedPrice} />
-            <Button title={"Add to Cart"} />
+            <Button
+              title={"Add to Cart"}
+              onClick={() => {
+                dispatch({ type: "addProduct", payload: data });
+              }}
+            />
           </div>
         </div>
       </Section>
