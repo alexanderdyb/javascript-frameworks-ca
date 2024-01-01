@@ -46,8 +46,6 @@ export default function ProductDetails() {
     return <div>Error</div>;
   }
 
-  console.log(data);
-
   return (
     <>
       <Section>
