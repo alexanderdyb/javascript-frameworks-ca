@@ -13,6 +13,12 @@
   justify-content: center;
 }
 
+.searchWrapper {
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1200px) {
   .productContainer {
     grid-template-columns: repeat(2, 1fr);

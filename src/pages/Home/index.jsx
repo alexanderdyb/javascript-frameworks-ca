@@ -3,6 +3,7 @@ import Section from "../../components/Section";
 import Product from "../../components/Product";
 import styles from "./Home.module.css";
 import Loading from "../../components/Loading";
+import SearchBar from "../../components/SearchBar";
 import { useEffect, useState } from "react";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -49,6 +50,9 @@ export default function Home() {
         </div>
       ) : (
         <Section>
+          <div className={styles.searchWrapper}>
+            <SearchBar placeholder="Enter a product name" data={products} />
+          </div>
           <div className={styles.productContainer}>
             {products.map((product) => (
               <Product
