@@ -10,31 +10,12 @@
   height: 100%;
 }
 
-.productPrice {
-  font-weight: bold;
-}
-
 .productTitle {
   margin-bottom: -10px;
 }
 
-.prices {
-  display: flex;
-  align-items: center;
-}
-
-.discountedPrice {
-  padding-left: 10px;
-  text-decoration: line-through;
-}
-
-.calculatedDiscount {
-  position: absolute;
-  top: 0px;
-  background-color: #2d6e96;
-  padding: 10px;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-  font-weight: bold;
-  color: #fff;
+.detailsButton {
+  border: solid 1px #2d6e96;
+  border-radius: 16px;
+  padding: 8px 20px;
 }

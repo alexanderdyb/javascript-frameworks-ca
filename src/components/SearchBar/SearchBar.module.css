@@ -1,0 +1,49 @@
+.inputWrapper {
+  display: flex;
+  position: relative;
+}
+
+.searchContainer input {
+  background-color: white;
+  border-radius: 2px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+}
+
+.resultsContainer {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.resultsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.resultsContainer .resultItem {
+  height: 50px;
+  color: #161616;
+}
+
+.resultItem p {
+  margin-left: 5px;
+}
+
+.searchIcon {
+  height: 60px;
+  max-width: 50px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 10px;
+  color: #161616;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchIcon svg {
+  font-size: 35px;
+}

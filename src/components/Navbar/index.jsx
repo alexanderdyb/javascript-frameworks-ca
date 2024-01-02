@@ -1,10 +1,12 @@
 import styles from "./Navbar.module.css";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../../Layout";
 
 export default function Navbar() {
-  const [basketCount, setBasketCount] = useState(0);
+  const { state } = useContext(ThemeContext);
+  const basketCount = state.cart.length;
 
   return (
     <>

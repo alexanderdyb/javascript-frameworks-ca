@@ -1,0 +1,32 @@
+.cart {
+  margin-bottom: 400px;
+}
+
+.cartHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.totalPrice {
+  max-width: 500px;
+  margin: auto;
+  border-bottom: 1px solid #161616;
+}
+
+.cartCheckout {
+  padding-top: 40px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.totalPrice p {
+  font-weight: bold;
+}
+
+.cartMessage {
+  text-align: center;
+}
+
+.cartMessage a {
+  text-decoration: underline;
+}
