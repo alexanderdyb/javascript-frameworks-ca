@@ -1,46 +1,43 @@
-.searchInputs {
-  margin-top: 105px;
+.inputWrapper {
   display: flex;
+  position: relative;
 }
 
-.search input {
+.searchContainer input {
   background-color: white;
   border-radius: 2px;
   font-size: 18px;
   padding: 15px;
   height: 30px;
-  width: 268px;
 }
 
-.dataResult {
-  width: 300px;
-  max-height: 200px;
-  background-color: white;
+.resultsContainer {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
 }
 
-.dataResult::-webkit-scrollbar {
+.resultsContainer::-webkit-scrollbar {
   display: none;
 }
 
-.dataResult .dataItem {
-  width: 100px;
+.resultsContainer .resultItem {
   height: 50px;
-  color: black;
+  color: #161616;
 }
 
-.dataItem p {
+.resultItem p {
   margin-left: 5px;
 }
 
 .searchIcon {
   height: 60px;
-  width: 50px;
-  background-color: white;
+  max-width: 50px;
   display: grid;
   place-items: center;
+  position: absolute;
+  right: 10px;
+  color: #161616;
 }
 
 input:focus {

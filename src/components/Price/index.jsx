@@ -7,9 +7,9 @@ export default function Price({ price, discountedPrice }) {
     <>
       <div className={styles.prices}>
         <p className={styles.productPrice}>
-          kr {isDiscounted ? discountedPrice : price}
+          {isDiscounted ? discountedPrice : price} NOK
         </p>
-        {isDiscounted && <p className={styles.discountedPrice}>kr {price}</p>}
+        {isDiscounted && <p className={styles.discountedPrice}>{price} NOK</p>}
       </div>
     </>
   );
