@@ -2,11 +2,11 @@ import { ThemeContext } from "../../Layout";
 import { useContext } from "react";
 import Section from "../../components/Section";
 import CartItem from "../../components/CartItem";
-import styles from "./Cart.module.css";
+import styles from "./CheckoutPage.module.css";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 
-export default function Cart() {
+export default function CheckoutPage() {
   const { state, dispatch } = useContext(ThemeContext);
   const items = state.cart;
   const total = state.total.toFixed(2);
@@ -32,12 +32,14 @@ export default function Cart() {
               <p>{total} NOK</p>
             </div>
             <div className={styles.cartCheckout}>
-              <Button
-                title="Checkout"
-                onClick={() => {
-                  dispatch({ type: "clearCart" });
-                }}
-              />
+              <Link to="/checkout-success">
+                <Button
+                  title="Checkout"
+                  onClick={() => {
+                    dispatch({ type: "clearCart" });
+                  }}
+                />
+              </Link>
             </div>
           </>
         ) : (

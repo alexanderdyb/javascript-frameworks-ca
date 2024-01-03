@@ -2,11 +2,11 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
-import Checkout from "./pages/Checkout";
-import Contact from "./pages/Contact";
-import Cart from "./pages/Cart";
+import CheckoutSuccessPage from "./pages/CheckoutSuccessPage";
+import ContactPage from "./pages/ContactPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import RouteNotFound from "./pages/RouteNotFound";
-import ProductDetails from "./pages/ProductDetails";
+import ProductPage from "./pages/ProductPage";
 
 export default function App() {
   return (
@@ -14,11 +14,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="checkout-success" element={<CheckoutSuccessPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
           <Route path="*" element={<RouteNotFound />} />
-          <Route path="product/:id" element={<ProductDetails />} />
+          <Route path="product/:id" element={<ProductPage />} />
         </Route>
       </Routes>
     </div>

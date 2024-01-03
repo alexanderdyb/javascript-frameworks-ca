@@ -2,23 +2,20 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../../Layout";
 import Section from "../../components/Section";
-import styles from "./ProductDetails.module.css";
+import styles from "./ProductPage.module.css";
 import Button from "../../components/Button";
 import Price from "../../components/Price";
 import PriceTag from "../../components/PriceTag";
 import Reviews from "../../components/Reviews";
 import Loading from "../../components/Loading";
 
-export default function ProductDetails() {
+export default function ProductPage() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   let { id } = useParams();
-  const { state, dispatch } = useContext(ThemeContext);
-  useEffect(() => {
-    console.log("Cart updated:", state);
-  }, [state.cart]);
+  const { dispatch } = useContext(ThemeContext);
 
   useEffect(() => {
     async function getData(url) {

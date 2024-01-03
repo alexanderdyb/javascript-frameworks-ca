@@ -1,0 +1,10 @@
+.checkoutSuccess {
+  max-width: 800px;
+  margin: auto;
+  padding-bottom: 283px;
+}
+
+.checkoutSuccess a {
+  font-weight: bold;
+  text-decoration: underline;
+}

@@ -17,7 +17,7 @@ export default function Navbar() {
           </Link>
           <ul>
             <li>
-              <Link to="/cart" className={styles.basket}>
+              <Link to="/checkout" className={styles.basket}>
                 <ShoppingBasketIcon className={styles.basketIcon} />
                 {basketCount > 0 && (
                   <div className={styles.basketCountBackground}>
