@@ -22,6 +22,7 @@
 .reviews {
   margin: auto;
   max-width: 800px;
+  padding-top: 50px;
 }
 
 .reviews h2 {
