@@ -10,11 +10,13 @@ export default function Product({ image, title, price, discountedPrice, id }) {
         <img src={image} alt={title} />
         <PriceTag price={price} discountedPrice={discountedPrice} />
       </div>
-      <p className={styles.productTitle}>{title}</p>
-      <Price price={price} discountedPrice={discountedPrice} />
-      <Link to={`/product/${id}`} className={styles.detailsButton}>
-        View product
-      </Link>
+      <div className={styles.productWrapper}>
+        <p className={styles.productTitle}>{title}</p>
+        <Price price={price} discountedPrice={discountedPrice} />
+        <Link to={`/product/${id}`} className={styles.detailsButton}>
+          View product
+        </Link>
+      </div>
     </div>
   );
 }

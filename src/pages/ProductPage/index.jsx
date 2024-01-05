@@ -5,7 +5,6 @@ import Section from "../../components/Section";
 import styles from "./ProductPage.module.css";
 import Button from "../../components/Button";
 import Price from "../../components/Price";
-import PriceTag from "../../components/PriceTag";
 import Reviews from "../../components/Reviews";
 import Loading from "../../components/Loading";
 
@@ -54,14 +53,8 @@ export default function ProductPage() {
       ) : (
         <Section>
           <div className={styles.productDetails}>
-            <div className={styles.productDetailsImage}>
-              <img src={data.imageUrl} alt={data.title} />
-              <PriceTag
-                price={data.price}
-                discountedPrice={data.discountedPrice}
-              />
-            </div>
-            <div>
+            <img src={data.imageUrl} alt={data.title} />
+            <div className={styles.infoWrapper}>
               <h1>{data.title}</h1>
               <p>{data.description}</p>
               <Price
