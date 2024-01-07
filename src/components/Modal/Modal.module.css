@@ -1,0 +1,18 @@
+.modal {
+  border: 1px solid #161616;
+  border-radius: 16px;
+  color: #161616;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalText {
+  font-weight: bold;
+  text-align: center;
+}

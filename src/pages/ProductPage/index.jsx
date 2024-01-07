@@ -7,11 +7,13 @@ import Button from "../../components/Button";
 import Price from "../../components/Price";
 import Reviews from "../../components/Reviews";
 import Loading from "../../components/Loading";
+import Modal from "../../components/Modal";
 
 export default function ProductPage() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isModal, setIsModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   let { id } = useParams();
   const { dispatch } = useContext(ThemeContext);
@@ -40,6 +42,10 @@ export default function ProductPage() {
     getData(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   }, [id]);
 
+  function onAddToCart() {
+    setIsModal(true);
+  }
+
   return (
     <>
       {isLoading ? (
@@ -65,9 +71,15 @@ export default function ProductPage() {
                 title={"Add to Cart"}
                 onClick={() => {
                   dispatch({ type: "addProduct", payload: data });
+                  onAddToCart();
                 }}
               />
             </div>
+            {isModal && (
+              <div className={styles.modalWrapper}>
+                <Modal />
+              </div>
+            )}
           </div>
           <div className={styles.reviews}>
             <h2>Reviews</h2>
