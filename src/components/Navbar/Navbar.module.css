@@ -38,3 +38,8 @@
   font-weight: bold;
   word-spacing: 5px;
 }
+
+.links {
+  display: flex;
+  gap: 40px;
+}

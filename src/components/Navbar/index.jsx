@@ -1,8 +1,8 @@
 import styles from "./Navbar.module.css";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../../Layout";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const { state } = useContext(ThemeContext);
@@ -12,19 +12,29 @@ export default function Navbar() {
     <>
       <nav className={styles.nav}>
         <div className={styles.linkWrapper}>
-          <Link to="/">
+          <NavLink to="/">
             Innovate<span className={styles.logo}>Edge</span>
-          </Link>
-          <ul>
+          </NavLink>
+          <ul className={styles.links}>
             <li>
-              <Link to="/checkout" className={styles.basket}>
+              <NavLink
+                to="/contact"
+                style={({ isActive }) => {
+                  return isActive ? { textDecoration: "underline" } : {};
+                }}
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/checkout" className={styles.basket}>
                 <ShoppingBasketIcon className={styles.basketIcon} />
                 {basketCount > 0 && (
                   <div className={styles.basketCountBackground}>
                     <span className={styles.basketCount}>{basketCount}</span>
                   </div>
                 )}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
