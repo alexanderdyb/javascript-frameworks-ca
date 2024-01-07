@@ -59,7 +59,9 @@ export default function ProductPage() {
       ) : (
         <Section>
           <div className={styles.productDetails}>
-            <img src={data.imageUrl} alt={data.title} />
+            <div>
+              <img src={data.imageUrl} alt={data.title} />
+            </div>
             <div className={styles.infoWrapper}>
               <h1>{data.title}</h1>
               <p>{data.description}</p>

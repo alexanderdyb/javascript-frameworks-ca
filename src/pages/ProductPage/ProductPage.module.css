@@ -9,6 +9,10 @@
   gap: 5%;
 }
 
+.productDetails > div {
+  flex: 1;
+}
+
 .modalWrapper {
   position: absolute;
   top: 50%;
