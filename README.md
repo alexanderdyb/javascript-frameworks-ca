@@ -2,7 +2,7 @@
 
 ## Description
 
-AThis project is a React-based e-commerce store utilizing the Noroff API for product data. The application showcases a dynamic and responsive design, suitable for all devices. The primary features include a homepage with a product listing, an individual product page, a cart page, and a checkout success page. A key feature is the look-ahead search bar on the homepage that filters products as you type.
+This project is a React-based e-commerce store utilizing the Noroff API for product data. The application showcases a dynamic and responsive design, suitable for all devices. The primary features include a homepage with a product listing, an individual product page, a cart page, and a checkout success page. A key feature is the look-ahead search bar on the homepage that filters products as you type.
 
 ## Features
 
